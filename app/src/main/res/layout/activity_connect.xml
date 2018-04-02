@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:animateLayoutChanges="true"
+    android:id="@+id/connect_flipper"
+    tools:context=".activity.ConnectActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <ImageView
+            android:id="@+id/tractor_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_above="@+id/connect_info_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/tractor" />
+
+        <TextView
+            android:id="@+id/connect_info_text"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/pipe_roller_message"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/action_connect"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/connect_info_text"
+            android:layout_centerHorizontal="true"
+            android:text="@string/connect"
+            android:onClick="onClick"
+            android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:id="@+id/connect_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large" />
+
+        <TextView
+            android:id="@+id/connect_progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/connect_progress"
+            android:text="@string/connect_progress_text"
+            android:layout_marginTop="4dp"
+            android:textSize="18sp"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/action_cancel"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/connect_progress_text"
+            android:layout_centerHorizontal="true"
+            android:text="@string/cancel"
+            android:onClick="onClick"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/map"
+            android:layout_above="@+id/distance_layout"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/action_finish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/distance_layout"
+            android:contentDescription="@string/description_map_confirm_button"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:padding="10dp"
+            android:text="@string/finish"
+            android:theme="@style/GreenButtonTheme" />
+
+        <LinearLayout
+            android:id="@+id/distance_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="#555555"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/distance_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/distance_text_template"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</ViewFlipper>

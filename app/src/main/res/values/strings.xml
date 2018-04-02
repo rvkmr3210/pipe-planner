@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">DP Pipe Plan Parser</string>
+    <string name="pdf_info_load">You can choose a Delta Plastics Pipe Planner PDF from your Dropbox folder. Click this button to get started.</string>
+    <string name="ok">OK</string>
+    <string name="error_download">There was an error downloading this file.</string>
+    <string name="dialog_downloading">Downloading %s…</string>
+    <string name="error_bad_pdf">You must select a PDF file.</string>
+    <string name="choose_pdf">Choose PDF</string>
+    <string name="dropbox_key">fvyvr9kyll1vgnj</string>
+    <string name="title_activity_pipe">Pipe Plan</string>
+
+    <string name="label_diameter">Diameter: %1$.1f</string>
+    <string name="label_pipe_length">Pipe length (ft): %1$d - %2$d</string>
+    <string name="label_furrows_irrigated">Furrows irrigated: %1$s</string>
+    <string name="label_holes_per_furrow">Holes per furrow: %1$d</string>
+    <string name="label_hole_size">Hole size (in): %1$s</string>
+    <string name="label_furrow_count">Furrow count: %1$d</string>
+
+    <string name="welcome_message">Your Pipe Plan import was successful! We\'re going to need a
+        little more help setting up your furrows. Follow the instructions on the screen.</string>
+    <string name="close">Close</string>
+    <string name="instruction_angle_selection">Adjust the angle of your furrows using the slider.</string>
+    <string name="instruction_spacing_selection">Adjust the spacing of the furrows using the slider.</string>
+    <string name="done">Done</string>
+    <string name="pipe_roller_message">If you are using a pipe roller provided by the University of Arkansas, you can connect via Bluetooth or USB to control the onboard printer.</string>
+    <string name="connect">Connect</string>
+    <string name="error_device_missing_bluetooth">Your device does not support Bluetooth.</string>
+    <string name="connect_progress_text">Searching for pipe printers&#8230;</string>
+    <string name="no_bluetooth_devices_found">No valid Bluetooth devices were found.</string>
+    <string name="error_socket_opening">Unable to connect to Bluetooth device.</string>
+    <string name="connecting_to_printer">Connecting to %1$s…</string>
+    <string name="cancel">Cancel</string>
+    <string name="description_map_confirm_button">Confirm your current drawing</string>
+    <string name="finish">Finish</string>
+    <string name="distance_text_template">Current furrow: %1$s holes\\nDistance until next print: %2$.2f ft</string>
+
+    <string name="usb_successful">Successfully connected via USB.</string>
+    <string name="usb_failure">No USB device found.</string>
+    <string name="usb_connection_lost">USB Connection lost. Try again.</string>
+    <string name="distance_text_template_before">Enter a levee to begin irrigation.\n</string>
+
+    <string-array name="bluetooth_mac_addresses" translatable="false">
+        <item>C7:99:84:76:A1:E9</item>
+        <item>00:0E:EA:CF:1D:3E</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+</resources>

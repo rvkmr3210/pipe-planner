@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.uark.pipeplanparser.activity.HelpActivity$MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/text_info"
+        android:textSize="32sp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/pdf_info_load"/>
+
+    <Button
+        android:id="@+id/button_choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_info"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/choose_pdf"
+        android:onClick="onClick"
+        android:theme="@style/DropboxButtonTheme"
+        android:drawablePadding="8dp"
+        android:textColor="@android:color/white"
+        android:drawableLeft="@drawable/ic_dropbox"/>
+
+    <Button
+        android:id="@+id/button_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_choose"
+        android:layout_centerHorizontal="true"
+        android:text="Use sample data"
+        android:onClick="onClick"
+        android:theme="@style/DropboxButtonTheme"
+        android:drawablePadding="8dp"
+        android:textColor="@android:color/white"/>
+
+
+</RelativeLayout>

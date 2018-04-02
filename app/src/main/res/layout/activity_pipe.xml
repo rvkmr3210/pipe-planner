@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.uark.pipeplanparser.activity.PipeActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context="edu.uark.pipeplanparser.activity.PipeActivity" />
+
+    <RelativeLayout
+        android:id="@+id/segment_info_container"
+        android:visibility="gone"
+        android:alpha="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#555555"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/label_instruction"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/button_ok"
+            android:layout_toStartOf="@+id/button_ok"
+            android:textColor="@android:color/white"
+            android:text="@string/instruction_angle_selection"/>
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="0"
+            android:layout_below="@+id/label_instruction"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/label_diameter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_diameter"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/label_pipe_length"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/label_diameter"
+            android:text="@string/label_pipe_length"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/label_holes_per_furrow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/label_pipe_length"
+            android:text="@string/label_holes_per_furrow"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/label_hole_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/label_holes_per_furrow"
+            android:text="@string/label_hole_size"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/label_furrow_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/label_hole_size"
+            android:text="@string/label_furrow_count"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/button_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/close"
+            android:drawableLeft="@drawable/ic_clear"
+            android:drawableStart="@drawable/ic_clear"
+            android:textColor="@android:color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            style="?attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/button_ok"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/done"
+            android:drawableLeft="@drawable/ic_check"
+            android:drawableStart="@drawable/ic_check"
+            android:textColor="@android:color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            style="?attr/borderlessButtonStyle" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:visibility="gone"
+        android:text="Connect"/>
+</RelativeLayout>
