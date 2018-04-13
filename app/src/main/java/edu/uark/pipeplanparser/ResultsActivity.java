@@ -17,37 +17,37 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 import edu.uark.pipeplanparser.activity.PipeActivity;
-import edu.uark.pipeplanparser.databinding.ActivityResultsBinding;
+//import edu.uark.pipeplanparser.databinding.ActivityResultsBinding;
 
 public class ResultsActivity extends AppCompatActivity {
-    ActivityResultsBinding activityMainBinding;
+//    ActivityResultsBinding activityMainBinding;
     ArrayList<String> holeSizelist;
     ArrayList<String> pipesizeList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_results);
+//       activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_results);
         if(getIntent()!=null)
         {
-            activityMainBinding.editText.setText(getIntent().getStringExtra(PipeActivity.farmName));
-            activityMainBinding.editText2.setText(getIntent().getStringExtra(PipeActivity.fieldName));
-            activityMainBinding.editText3.setText(getIntent().getStringExtra(PipeActivity.holeSpacing));
+//            activityMainBinding.editText.setText(getIntent().getStringExtra(PipeActivity.farmName));
+//            activityMainBinding.editText2.setText(getIntent().getStringExtra(PipeActivity.fieldName));
+//            activityMainBinding.editText3.setText(getIntent().getStringExtra(PipeActivity.holeSpacing));
 
 
             holeSizelist = (ArrayList<String>) getIntent().getSerializableExtra(PipeActivity.holesize);
             pipesizeList = (ArrayList<String>) getIntent().getSerializableExtra(PipeActivity.pipesize);
             PipeSizeAdapter myListAdapter = new PipeSizeAdapter();
-            ListView listView = (ListView) findViewById(R.id.list_main);
-            listView.setAdapter(myListAdapter);
+//            ListView listView = (ListView) findViewById(R.id.list_main);
+//            listView.setAdapter(myListAdapter);
             /*HoleSizeAdapter holesizeAdapter = new HoleSizeAdapter();
             ListView listViewholesize = (ListView) findViewById(R.id.listHolesize);
             listViewholesize.setAdapter(holesizeAdapter);*/
             ArrayAdapter<String> aa = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,holeSizelist);
-            Spinner listViewholesize = (Spinner) findViewById(R.id.listHolesize);
+//            Spinner listViewholesize = (Spinner) findViewById(R.id.listHolesize);
             aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             //Setting the ArrayAdapter data on the Spinner
-            listViewholesize.setAdapter(aa);
+//            listViewholesize.setAdapter(aa);
         }
 
     }

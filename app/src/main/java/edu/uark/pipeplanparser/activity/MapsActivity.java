@@ -31,6 +31,7 @@ import com.google.maps.android.ui.IconGenerator;
 import java.util.ArrayList;
 
 import edu.uark.pipeplanparser.R;
+import edu.uark.pipeplanparser.model.PipePlanner;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
@@ -40,7 +41,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     ArrayList<LatLng> points;
     ArrayList<LatLng> referencePoints;
-    double[] distances = {0.0, 41.0, 250.0, 426.0, 551.0, 644.0, 732.0, 770.0};
+    ArrayList<PipePlanner> pipePlanners = new ArrayList<>();
+    ArrayList<Double> distances = new ArrayList<>();
     private GPSTracker gps;
     private double distance = 0;
 
@@ -56,6 +58,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        pipePlanners = getIntent().getParcelableArrayListExtra("PIPE_DETAILS");
+        for (int i = 0; i < pipePlanners.size(); i++) {
+            distances.add(Double.parseDouble(pipePlanners.get(i).getStationStart()));
+        }
         points = new ArrayList<LatLng>();
         referencePoints = new ArrayList<>();
     }
@@ -101,10 +107,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 referencePoints.add(point);
 
                 if (referencePoints.size() > 1) {
-                    if (referencePoints.size() <= distances.length) {
+                    if (referencePoints.size() <= distances.size()) {
                         LatLng destinationPoint = getDestinationPoint(points.get(points.size() - 1),
                                 calculateBearing(points.get(points.size() - 1), point),
-                                distances[referencePoints.size() - 1] - distances[referencePoints.size() - 2]);
+                                distances.get(referencePoints.size() - 1) - distances.get(referencePoints.size() - 2));
                         points.add(destinationPoint);
 
                     } else {
@@ -113,7 +119,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 } else points.add(point);
                 if (points.size() > 1) {
-                    distance = distance + distance(points.get(points.size() - 2),points.get(points.size() - 1));
+                    distance = distance + distance(points.get(points.size() - 2), points.get(points.size() - 1));
                 }
 
                 // Instantiating the class MarkerOptions to plot marker on the map
@@ -123,7 +129,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 markerOptions.position(points.get(points.size() - 1));
 
                 // Setting titile of the infowindow of the marker
-                markerOptions.title("Station : "+points.size());
+                markerOptions.title("Station : " + points.size());
 
                 // Setting the content of the infowindow of the marker
                 markerOptions.snippet("distance :" + distance);
@@ -208,21 +214,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    private double distance(LatLng from,LatLng to) {
-        double distance= SphericalUtil.computeDistanceBetween(from,to);
-        return distance*3.28084;
+    private double distance(LatLng from, LatLng to) {
+        double distance = SphericalUtil.computeDistanceBetween(from, to);
+        return distance * 3.28084;
 
     }
 
     public double calculateBearing(LatLng src, LatLng dest) {
-        Log.d("bearing",""+SphericalUtil.computeHeading(src, dest));
+        Log.d("bearing", "" + SphericalUtil.computeHeading(src, dest));
         return SphericalUtil.computeHeading(src, dest);
     }
 
     private LatLng getDestinationPoint(LatLng source, double brng, double dist) {
-        LatLng dest=SphericalUtil.computeOffset(source, (dist * 0.3048), brng);
+        LatLng dest = SphericalUtil.computeOffset(source, (dist * 0.3048), brng);
         Log.d("destLocation", "" + dest);
-        return dest ;
+        return dest;
 
     }
 

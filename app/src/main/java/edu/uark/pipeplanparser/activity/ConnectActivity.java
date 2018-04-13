@@ -63,7 +63,7 @@ public class ConnectActivity extends AppCompatActivity implements TrailerCommuni
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        mPipe = getIntent().getParcelableExtra(EXTRA_PIPE);
+        mPipe = new Pipe()/*getIntent().getParcelableExtra(EXTRA_PIPE)*/;
 
         mConnectButton = (Button) findViewById(R.id.action_connect);
 

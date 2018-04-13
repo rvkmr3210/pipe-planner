@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/table_row_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangular_border">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <EditText
+            android:id="@+id/et_station_start_point"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_station_end_point"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLines="1" />
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/sp_hole_size"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:spinnerMode="dialog"
+        android:background="@drawable/rectangular_border"/>
+
+    <EditText
+        android:id="@+id/et_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:background="@drawable/rectangular_border"/>
+
+    <EditText
+        android:id="@+id/et_pipe_size"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLines="1"
+        android:background="@drawable/rectangular_border"/>
+
+    <EditText
+        android:id="@+id/et_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:background="@drawable/rectangular_border"/>
+</TableRow>
